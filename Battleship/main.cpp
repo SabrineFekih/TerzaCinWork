@@ -1,6 +1,6 @@
 /*
     Main del progetto Battleship
-    Sandro Gallo - 08/01/2026
+    Sandro Gallo - 14/01/2026
     Battleship Game
 */
 
@@ -32,16 +32,19 @@ void stampaMatrice( char matrice[DIM][DIM] ) {
     cout << endl << endl;
 }
 
+void inizializzaMatrice( char matrice[DIM][DIM] ) {
+    for (int i=0; i<DIM; i++) {
+        for (int j=0; j<DIM; j++) {
+            matrice[i][j] = '~'; // Simbolo per acqua
+        }
+    }
+}
 
 int main() {
     srand(time(NULL));
     char m[DIM][DIM];
 
-    for (int i=0; i<DIM; i++) {
-        for (int j=0; j<DIM; j++) {
-            m[i][j] = '-';
-        }
-    }
+    inizializzaMatrice(m);
     piazzaNave(m, 4);
 	stampaMatrice(m);
 	return 0;
